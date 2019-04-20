@@ -13,18 +13,43 @@ def initialize():
   classes = []
   nj = []
 
-def get_data(singleData):
-  if singleData != 'done':
-    data.append(int(singleData))
-  # print(data)
-
 def get_constants():
   global n
   global m
   global c
+  global classes
+  global nj
+
   n = len(data)
   # print(n)
   m = math.log10(n) * 3.3 + 1
   # print(m)
   c = (max(data) - min(data))/m
   # print(c)
+
+  for i in data:
+    newClass = True
+    for j in classes:
+      if( i == j):
+        newClass = False
+    if(newClass):
+      classes.append(i)
+      
+  for i in classes:
+    nj.append(0)
+  for i in (data):
+    for j in range(len(classes)):
+      if(i == classes[j]):
+        nj[j] += 1
+
+def get_data():
+  global data
+  singleData = 0
+
+  while singleData != 'done':
+    print("sample data")
+    singleData = input()
+    if singleData != 'done':
+      data.append(int(singleData))
+
+  get_constants()

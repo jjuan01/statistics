@@ -9,14 +9,12 @@ if __name__ == '__main__':
 
   data.initialize()
 
-  singleData = 0
+  request = True
 
-  while singleData != 'done':
-    print("sample data")
-    singleData = input()
-    data.get_data(singleData)
-  
-  data.get_constants()
+  # while(request):
+
+
+  data.get_data()
 
   pd.printall()
 

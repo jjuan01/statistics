@@ -17,6 +17,18 @@ def print_me():
 def print_md():
   print("Md(x) =", mctdo.md())
 
+def print_variance():
+  print("Variance =", deviation.variance())
+
+def print_std_deviation():
+  print("Standard Deviation =", deviation.std_deviation())
+
+def print_modal_deviation():
+  print("Modal Deviation =", deviation.modal_deviation())
+
+def print_median_deviation():
+  print("Median Deviation =", deviation.median_deviation())
+  
 def print_const():
   print("n = ", data.n)
   print("m = ", data.m)
@@ -29,6 +41,10 @@ def printall():
   print_mh()
   print_me()
   print_md()
+  print_variance()
+  print_std_deviation()
+  print_modal_deviation()
+  print_median_deviation()
 
 
 

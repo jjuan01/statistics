@@ -25,21 +25,6 @@ def me():
   return statistics.median(data.data)
 
 def md():
-  for i in data.data:
-    newClass = True
-    for j in data.classes:
-      if( i == j):
-        newClass = False
-    if(newClass):
-      data.classes.append(i)
-      
-  for i in data.classes:
-    data.nj.append(0)
-  for i in (data.data):
-    for j in range(len(data.classes)):
-      if(i == data.classes[j]):
-        data.nj[j] += 1
-
   howManyMax = 0
 
   for i in data.nj:
