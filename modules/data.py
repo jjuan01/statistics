@@ -46,10 +46,11 @@ def get_data():
   global data
   singleData = 0
 
-  while singleData != 'done':
-    print("sample data")
-    singleData = input()
-    if singleData != 'done':
-      data.append(int(singleData))
-
+  # while singleData != 'done':
+  #   print("sample data")
+  #   singleData = input()
+  #   if singleData != 'done':
+  #     data.append(int(singleData))
+  data = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5]
+  
   get_constants()

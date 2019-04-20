@@ -2,6 +2,11 @@ import modules.data as data
 import modules.mctdo as mctdo
 import modules.deviation as deviation
 
+def cls():
+  print(chr(27)+'[2j')
+  print('\033c')
+  print('\x1bc')
+
 def print_m():
   print("M(x) =", mctdo.m())
   
@@ -36,11 +41,13 @@ def print_const():
 
 def printall():
   print_const()
+  print("----------------------")
   print_m()
   print_mg()
   print_mh()
   print_me()
   print_md()
+  print("----------------------")
   print_variance()
   print_std_deviation()
   print_modal_deviation()
