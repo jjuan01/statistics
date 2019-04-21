@@ -1,3 +1,4 @@
+import sys
 import modules.print_data as pd
 
 def main_menu():
@@ -41,8 +42,9 @@ def check_exit(request):
 
   return request
 
-def switch(request_variables, request):
-  if(request_variables == 'D' or request_variables == 'd'):
+def switch(request):
+    if(request == 'C' or request == 'c'):
+      pd.print_const()
     if(request == 'M' or request == 'm'):
       pd.print_m()
     elif(request == 'G' or request == 'g'):
@@ -56,6 +58,5 @@ def switch(request_variables, request):
     elif(request == 'A' or request == 'a'):
       pd.printall()
 
-  elif(request_variables == 'C' or request_variables == 'c'):
-    if(request == 'M' or request == 'm'):
-      print("continuas")
+  # if(request_variables == 'D' or request_variables == 'd'):
+  # elif(request_variables == 'C' or request_variables == 'c'):

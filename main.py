@@ -8,31 +8,33 @@ import modules.menu as menu
 
 if __name__ == '__main__':
 
-  data.initialize()
-
   finish = False
 
+# LOOP FOR FINISHING PROGRAM
   while(finish == False):
     request = menu.main_menu()
   #Check exit
     menu.check_exit(request)
   #Record data
     if (request == 'r' or request == 'R'):
-    # Calculations for entered values
+    # Request for type of variable
       request_variables = menu.type_of_varible_menu()
+    # Calculations for entered values
+      data.initialize(request_variables)
       new_entry = False
+    #Collect data sample
+      data.get_data() 
+    # LOOP FOR KEEP WORKING WITH SAME SAMPLE 
       while(new_entry == False):
-        data.get_data()      
+      # Request for measure to show
         request = menu.measures_menu()
       #Check exit
         menu.check_exit(request)
         if(request == 'n' or request == 'N'):
           new_entry = True
           pd.cls()
-        menu.switch(request_variables, request)
+      # Calls measure requested
+        menu.switch(request)
   #Error output
     else:
       print("Wrong entry")
-  # data.get_data()
-
-  # pd.printall()
