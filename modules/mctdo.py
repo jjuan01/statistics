@@ -62,22 +62,36 @@ def md():
           return data.classes[i]
 
   elif(data.type_of_variable == 'c'):
-    statistics.mode(data.data)
-    # k_indexes = []
-    # for i in range(len(data.nj)):
-    #   if(data.nj[i] == max(data.nj)):
-    #     k_indexes.append(i)
-    #     howManyMax += 1
-      
-    # if(howManyMax>1):
-    #   average = 0
 
+    classes = []
+    nj = []
+    for i in data.data:
+      newClass = True
+      for j in classes:
+        if( i == j):
+          newClass = False
+      if(newClass):
+        classes.append(i)
+        
+    for i in classes:
+      nj.append(0)
+    for i in (data.data):
+      for j in range(len(classes)):
+        if(i == classes[j]):
+          nj[j] += 1
 
-    # #   for i in range(len(data.nj)):
-    # #     if(max(data.nj) == data.nj[i]):
-    # #       average += data.classes[i]
+    for i in nj:
+      if(i == max(nj)):
+        howManyMax += 1
+
+    if(howManyMax>1):
+      average = 0
+      for i in range(len(nj)):
+        if(max(nj) == nj[i]):
+          average += classes[i]
       
-    # # #   return (average / 2)
-    # else:
-    #   k = k_index[0]
-    #   mode = data.yprime[k] + ((data.c) * (nj[k] - ))
+      return (average / howManyMax)
+    else:
+      for i in range(len(nj)): 
+        if(max(nj) == nj[i]):
+          return classes[i]

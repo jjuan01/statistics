@@ -6,9 +6,15 @@ import modules.data as data
 def variance():
   sumatory = 0
 
-  for i in data.data:
-    sumatory += (i - mctdo.m()) * (i - mctdo.m())
-  return (sumatory / data.n)
+  if(data.type_of_variable == 'd'):
+    for i in data.data:
+      sumatory += (i - mctdo.m()) * (i - mctdo.m())
+    return (sumatory / data.n)
+
+  elif(data.type_of_variable == 'c'):
+    for i in data.medium_point:
+      sumatory += (i - mctdo.m()) * (i - mctdo.m())
+    return (sumatory / data.n)
 
 def std_deviation():
   return math.sqrt(variance())

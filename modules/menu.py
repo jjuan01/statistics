@@ -62,7 +62,7 @@ def switch(request):
     pd.print_me()
   elif(request == 'Mo' or request == 'mo'):
     # pd.print_m()
-    mctdo.md()
+    pd.print_md()
   elif(request == 'A' or request == 'a'):
     pd.printall()
   # elif(request_variables == 'C' or request_variables == 'c'):

@@ -48,7 +48,7 @@ def get_constants():
     for i in data:
       newClass = True
       for j in classes:
-        if( i == j):
+        if(i == j):
           newClass = False
       if(newClass):
         classes.append(i)
