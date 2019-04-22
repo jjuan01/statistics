@@ -3,7 +3,7 @@ import math
 import modules.data as data
 # import modules.mctdo as mctdo
 # import modules.deviation as deviation
-import modules.print_data as pd
+import modules.print as pd
 import modules.menu as menu
 
 if __name__ == '__main__':

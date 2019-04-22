@@ -48,10 +48,10 @@ def printall():
   print_me()
   print_md()
   print("----------------------")
-  print_variance()
-  print_std_deviation()
-  print_modal_deviation()
-  print_median_deviation()
+  # print_variance()
+  # print_std_deviation()
+  # print_modal_deviation()
+  # print_median_deviation()
 
 
 

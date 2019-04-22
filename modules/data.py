@@ -33,7 +33,6 @@ def get_constants():
   global n
   global m
   global c
-  global classes
   global nj
 
   n = len(data)
@@ -43,8 +42,9 @@ def get_constants():
   c = (max(data) - min(data))/m
   # print(c)
 
-# Discreet variable constant calculations
+  # Discreet variable constant calculations
   if(type_of_variable == 'd'):
+    global classes
     for i in data:
       newClass = True
       for j in classes:
@@ -60,12 +60,20 @@ def get_constants():
         if(i == classes[j]):
           nj[j] += 1
 
-# Continuous variable constant calculations
+  # Continuous variable constant calculations
   elif(type_of_variable == 'c'):
+    global yprime
+    global medium_point
     for i in range((int(round(m, 0)) + 1)):
       yprime.append(int(round(min(data) + (c * i), 0)))
     for i in range(len(yprime) - 1):
       medium_point.append(((yprime[i+1] - yprime[i]) / 2) + yprime[i])
+    for i in medium_point:
+      nj.append(0)
+    for i in (data):
+      for j in range(len(medium_point)):
+        if(i >= yprime[j] and i <= yprime[j + 1]):
+          nj[j] += 1
 
 def get_data():
   global data
