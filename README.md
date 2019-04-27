@@ -1,0 +1,1 @@
+Python application made for calculating statistics measures (given a set of values) such as ARITMETIC, GEOMETRIC and HARMONIC mean, MEDIUM and MODE, together with its corresponding deviations. App incorporates a graphical console interface.

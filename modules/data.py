@@ -37,9 +37,9 @@ def get_constants():
 
   n = len(data)
   # print(n)
-  m = round((math.log10(n) * 3.3 + 1), 0)
+  m = int(round((math.log10(n) * 3.3 + 1), 0))
   # print(m)
-  c = (max(data) - min(data))/m
+  c = round((max(data) - min(data))/m, 2)
   # print(c)
 
   # Discreet variable constant calculations

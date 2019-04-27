@@ -8,29 +8,42 @@ def variance():
 
   if(data.type_of_variable == 'd'):
     for i in data.data:
-      sumatory += (i - mctdo.m()) * (i - mctdo.m())
-    return (sumatory / data.n)
+      sumatory += pow((i - mctdo.m()), 2)
+    return round((sumatory / data.n), 2)
 
   elif(data.type_of_variable == 'c'):
-    for i in data.medium_point:
-      sumatory += (i - mctdo.m()) * (i - mctdo.m())
-    return (sumatory / data.n)
+    for i in range(len(data.medium_point)):
+      sumatory += data.nj[i] * pow((data.medium_point[i] - mctdo.m()), 2)
+    return round((sumatory / data.n), 2)
 
 def std_deviation():
-  return math.sqrt(variance())
+  return round(math.sqrt(variance()), 2)
 
 def modal_deviation():
   sumatory = 0
+  if(data.type_of_variable == 'd'):
+    for i in range(len(data.classes)):
+      sumatory += abs(data.classes[i] - mctdo.md()) * data.nj[i]
 
-  for i in range(len(data.classes)):
-    sumatory += abs(data.classes[i] - mctdo.md()) * data.nj[i]
+    return round((sumatory / data.n), 2)
 
-  return (sumatory / data.n)
+  elif(data.type_of_variable == 'c'):
+    for i in range(len(data.medium_point)):
+      sumatory += abs(data.medium_point[i] - mctdo.md()) * data.nj[i]
+
+    return round((sumatory / data.n), 2)
 
 def median_deviation():
   sumatory = 0
 
-  for i in range(len(data.classes)):
-    sumatory += abs(data.classes[i] - mctdo.me()) * data.nj[i]
+  if(data.type_of_variable == 'd'):
+    for i in range(len(data.classes)):
+      sumatory += abs(data.classes[i] - mctdo.me()) * data.nj[i]
 
-  return (sumatory / data.n)
+    return round((sumatory / data.n), 2)
+
+  elif(data.type_of_variable == 'c'):
+    for i in range(len(data.medium_point)):
+      sumatory += abs(data.medium_point[i] - mctdo.me()) * data.nj[i]
+
+    return round((sumatory / data.n), 2)

@@ -4,8 +4,10 @@ import modules.mctdo as mctdo
 
 def main_menu():
   pd.cls()
-  print("[R]ecord data")
-  print("[E]xit")
+  print("╔═════════════╗")
+  print("║[R]ecord data║")
+  print("║[E]xit       ║")              
+  print("╚═════════════╝")
   request = input()
   pd.cls()
 
@@ -15,8 +17,10 @@ def type_of_varible_menu():
 
   global request_variables
 
-  print("[D]iscreet")
-  print("[C]ontinuous")
+  print("╔════════════╗")
+  print("║[D]iscreet  ║")
+  print("║[C]ontinuous║")
+  print("╚════════════╝")
   request = input()
   pd.cls()
 
@@ -25,17 +29,20 @@ def type_of_varible_menu():
   return request
 
 def measures_menu():
-  print("____________________________________________")
-  print("____________________________________________")
-  print("SHOW")
-  print("[M]ean")
-  print("[G]eometric mean")
-  print("[H]armonic mean")
-  print("[Me]dian")
-  print("[Mo]de")
-  print("[A]ll")
-  print("--------------------------------------------")
-  print("[N]ew entry")
+  print("╔════════════════════════════════════════════╗")
+  print("║ SHOW                                       ║")
+  print("╠════════╦══════════════════╦════════════════╣")
+  print("║ [M]ean ║ [G]eometric mean ║ [H]armonic mean║")
+  print("╠════════╩═╦══════════╦═════╩══╦═════════════╣")
+  print("║ [Me]dian ║ [Me]dian ║ [Mo]de ║             ║")
+  print("╠══════════╩══════════╩════════╩═════════════╣")
+  print("║ [D]eviations                               ║")
+  print("╠════­════════════════════════════════════════╣")
+  print("║ [A]ll                                      ║")
+  print("╚════­════════════════════════════════════════╝")
+  print("╔════════════════════════════════════════════╗")
+  print("║ [N]ew entry                                ║")
+  print("╚════════════════════════════════════════════╝")
   request = input()
   pd.cls()
 
@@ -61,8 +68,9 @@ def switch(request):
   elif(request == 'Me' or request == 'me'):
     pd.print_me()
   elif(request == 'Mo' or request == 'mo'):
-    # pd.print_m()
     pd.print_md()
+  elif(request == 'D' or request == 'd'):
+    pd.print_deviations()
   elif(request == 'A' or request == 'a'):
     pd.printall()
   # elif(request_variables == 'C' or request_variables == 'c'):

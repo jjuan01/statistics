@@ -6,7 +6,17 @@ import modules.data as data
 # from data.data import data.data, n, m, classes, nj
 
 def m():
-  return statistics.mean(data.data)
+  if(data.type_of_variable == 'd'):
+    sumatory = 0
+    for i in range(len(data.data)):
+      sumatory += data.data[i]
+    return round(sumatory / data.n, 2)
+
+  elif(data.type_of_variable == 'c'):
+    sumatory = 0
+    for i in range(len(data.medium_point)):
+      sumatory += data.medium_point[i] * data.nj[i]
+    return round(sumatory / data.n, 2)
 
 def mg():
   # global data.type_of_variable
@@ -21,7 +31,7 @@ def mg():
     # print(math.log10(sumatory / data.n))
     geometric_mean = 10 ** (sumatory / data.n)
 
-    return geometric_mean
+    return round(geometric_mean, 2)
 
   elif(data.type_of_variable == 'c'):
     geometric_mean = 0
@@ -33,14 +43,14 @@ def mg():
     # print(math.log10(sumatory / data.n))
     geometric_mean = 10 ** (sumatory / data.n)
 
-    return geometric_mean
+    return round(geometric_mean, 2)
 
 
 def mh():
-  return statistics.harmonic_mean(data.data)
+  return round(statistics.harmonic_mean(data.data), 2)
 
 def me():
-  return statistics.median(data.data)
+  return round(statistics.median(data.data), 2)
 
 def md():
   howManyMax = 0
@@ -55,43 +65,39 @@ def md():
         if(max(data.nj) == data.nj[i]):
           average += data.classes[i]
       
-      return (average / 2)
+      return round((average / 2), 2)
     else:
       for i in range(len(data.nj)): 
         if(max(data.nj) == data.nj[i]):
-          return data.classes[i]
+          return round(data.classes[i], 2)
 
   elif(data.type_of_variable == 'c'):
+    nk = max(data.nj)
+    k = 0
+    for i in range(len(data.nj)):
+      if(data.nj[i] == nk):
+        k = i
 
-    classes = []
-    nj = []
-    for i in data.data:
-      newClass = True
-      for j in classes:
-        if( i == j):
-          newClass = False
-      if(newClass):
-        classes.append(i)
-        
-    for i in classes:
-      nj.append(0)
-    for i in (data.data):
-      for j in range(len(classes)):
-        if(i == classes[j]):
-          nj[j] += 1
+  # yprime k - 1
+    ypkm = 0
+  # yprime k + 1
+    ypkp = 0
+  # n k + 1
+    nkp = 0
+  # n k - 1
+    nkm = 0
 
-    for i in nj:
-      if(i == max(nj)):
-        howManyMax += 1
-
-    if(howManyMax>1):
-      average = 0
-      for i in range(len(nj)):
-        if(max(nj) == nj[i]):
-          average += classes[i]
-      
-      return (average / howManyMax)
+    if((k + 1) > (len(data.nj) + 1)):
+      ypkp = 0
+      nkp = 0
     else:
-      for i in range(len(nj)): 
-        if(max(nj) == nj[i]):
-          return classes[i]
+      ypkp = data.yprime[k + 2]
+      nkp = data.nj[k + 1]
+
+    ypkm = data.yprime[k]
+    if((k - 1) < 0):
+      nkm = 0
+    else:
+      nkm = data.nj[k - 1]
+
+    return round(ypkm + ((data.c * (data.nj[k] - nkm))/(2 * data.nj[k] - nkm + nkp)), 2)
