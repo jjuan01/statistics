@@ -1,15 +1,15 @@
 import sys
-import modules.print_data as pd
 import modules.mctdo as mctdo
+import modules.utilities as uts
 
 def main_menu():
-  pd.cls()
+  uts.cls()
   print("╔═════════════╗")
   print("║[R]ecord data║")
   print("║[E]xit       ║")              
   print("╚═════════════╝")
   request = input()
-  pd.cls()
+  uts.cls()
 
   return request
 
@@ -22,7 +22,7 @@ def type_of_varible_menu():
   print("║[C]ontinuous║")
   print("╚════════════╝")
   request = input()
-  pd.cls()
+  uts.cls()
 
   request_variables = request
 
@@ -44,7 +44,7 @@ def measures_menu():
   print("║ [N]ew entry                                ║")
   print("╚════════════════════════════════════════════╝")
   request = input()
-  pd.cls()
+  uts.cls()
 
   return request
 
@@ -58,19 +58,19 @@ def check_exit(request):
 def switch(request):
   # if(request_variables == 'D' or request_variables == 'd'):
   if(request == 'C' or request == 'c'):
-    pd.print_const()
+    uts.print_const()
   if(request == 'M' or request == 'm'):
-    pd.print_m()
+    uts.print_m()
   elif(request == 'G' or request == 'g'):
-    pd.print_mg()
+    uts.print_mg()
   elif(request == 'H' or request == 'h'):
-    pd.print_mh()
+    uts.print_mh()
   elif(request == 'Me' or request == 'me'):
-    pd.print_me()
+    uts.print_me()
   elif(request == 'Mo' or request == 'mo'):
-    pd.print_md()
+    uts.print_md()
   elif(request == 'D' or request == 'd'):
-    pd.print_deviations()
+    uts.print_deviations()
   elif(request == 'A' or request == 'a'):
     pd.printall()
   # elif(request_variables == 'C' or request_variables == 'c'):

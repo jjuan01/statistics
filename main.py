@@ -1,10 +1,10 @@
 import sys
-import math
+# import math
 import modules.data as data
 # import modules.mctdo as mctdo
 # import modules.deviation as deviation
-import modules.print as pd
 import modules.menu as menu
+import modules.utilities as uts
 
 if __name__ == '__main__':
 
@@ -32,9 +32,9 @@ if __name__ == '__main__':
         menu.check_exit(request)
         if(request == 'n' or request == 'N'):
           new_entry = True
-          pd.cls()
+          uts.cls()
       # Calls measure requested
-        menu.switch(request)
+        uts.switch(request)
   #Error output
     else:
       print("Wrong entry")

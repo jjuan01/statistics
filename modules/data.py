@@ -1,4 +1,5 @@
 import math
+import modules.utilities as uts
 
 def initialize(type_of_variable_request):
   global data
@@ -77,15 +78,33 @@ def get_constants():
 
 def get_data():
   global data
-  singleData = 0
+  data_input = ''
 
-  while singleData != 'done':
+  while data_input != 'done':
     print("sample data")
-    singleData = input()
-    if singleData != 'done':
-      data.append(int(singleData))
+    data_input = input()
+    if data_input != 'done':
+      modificator = False
+      value = ''
+      times = ''
+
+      for i in data_input:
+        if modificator:
+          times += i
+        elif i == '*':
+          modificator = True
+        else:
+          value += i
+
+      if modificator:
+        for i in range(int(times)):
+          data.append(int(value))
+        print(data)
+      elif not modificator:
+        data.append(int(data_input))
   
   # data = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5]
 
   # data = [30, 20, 90, 90, 40, 60, 20, 30, 10, 120, 40, 90, 60, 120, 20, 15, 60, 15, 60, 30, 15, 15, 40, 20, 40]
+  uts.cls()
   get_constants()
