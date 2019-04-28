@@ -26,13 +26,16 @@ def print_variance():
   print("Variance =", deviation.variance())
 
 def print_std_deviation():
-  print("Standard Deviation =", deviation.std_deviation())
+  print("S(x) =", deviation.std_deviation())
+  print("C.V.(x) =", deviation.coefficient_of_variation(), "%")
 
 def print_modal_deviation():
-  print("Modal Deviation =", deviation.modal_deviation())
+  print("DMd(x) =", deviation.modal_deviation())
+  print("CVMd(x) =", deviation.modal_coefficient_of_variation(), "%")
 
 def print_median_deviation():
-  print("Median Deviation =", deviation.median_deviation())
+  print("Dme(x) =", deviation.median_deviation())
+  print("CVMe(x) =", deviation.median_coefficient_of_variation(), "%")
 
 def print_deviations():
   print_variance(), print_std_deviation(), print_modal_deviation(), print_median_deviation()
@@ -45,13 +48,19 @@ def print_const():
 def printall():
   print_const()
   print("------------------------------")
-  print("Measures of Central Tendency")
+  print("MEASURES OF CENTRAL TENDENCY")
   print("------------------------------")
   print_m(), print_mg(), print_mh(), print_me(), print_md()
   print("------------------------------")
-  print("Deviations")
+  print("DEVIATIONS")
   print("------------------------------")
-  print_variance(), print_std_deviation(), print_modal_deviation(), print_median_deviation()
+  print_variance()
+  print("------------------------------")
+  print_std_deviation()
+  print("------------------------------") 
+  print_modal_deviation()
+  print("------------------------------")
+  print_median_deviation()
 
 
 

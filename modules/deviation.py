@@ -47,3 +47,12 @@ def median_deviation():
       sumatory += abs(data.medium_point[i] - mctdo.me()) * data.nj[i]
 
     return round((sumatory / data.n), 2)
+
+def coefficient_of_variation():
+  return round((std_deviation() / mctdo.m()) * 100, 2)
+
+def median_coefficient_of_variation():
+  return round((median_deviation() / mctdo.me()) * 100, 2)
+
+def modal_coefficient_of_variation():
+  return round((modal_deviation() / mctdo.md()) * 100, 2)
